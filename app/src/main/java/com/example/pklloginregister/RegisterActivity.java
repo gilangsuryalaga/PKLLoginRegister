@@ -67,14 +67,14 @@ public class RegisterActivity extends AppCompatActivity {
 
             private void requestRegister() {
                 mApiService.registerRequest("application/json","XMLHttpRequest",nama,email,pass,pass2)
-                        .enqueue(new Callback<ResponseBody>() {
+                        .enqueue(new Callback<user>() {
                             @Override
-                            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                            public void onResponse(Call<user> call, Response<user> response) {
                                 if (response.isSuccessful()){
                                     Log.i("debug", "onResponse: BERHASIL");
 
                                     try {
-                                        JSONObject jsonRESULTS = new JSONObject(response.body().string());
+                                        JSONObject jsonRESULTS = new JSONObject(response.body().toString());
                                         if (jsonRESULTS.getString("message").equals("Berhasil Membuat User!")){
                                             Toast.makeText(mContext, "BERHASIL REGISTRASI", Toast.LENGTH_SHORT).show();
                                             startActivity(new Intent(mContext, MainActivity.class));
@@ -84,8 +84,6 @@ public class RegisterActivity extends AppCompatActivity {
                                         }
                                     } catch (JSONException e) {
                                         e.printStackTrace();
-                                    } catch (IOException e) {
-                                        e.printStackTrace();
                                     }
                                 } else {
                                     Log.i("debug", "onResponse: GA BERHASIL");
@@ -93,7 +91,7 @@ public class RegisterActivity extends AppCompatActivity {
                             }
 
                             @Override
-                            public void onFailure(Call<ResponseBody> call, Throwable t) {
+                            public void onFailure(Call<user> call, Throwable t) {
                                 Log.e("debug", "onFailure: ERROR > " + t.getMessage());
                                 Toast.makeText(mContext, "Koneksi Internet Bermasalah", Toast.LENGTH_SHORT).show();
                             }

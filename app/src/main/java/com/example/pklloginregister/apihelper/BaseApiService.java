@@ -1,5 +1,7 @@
 package com.example.pklloginregister.apihelper;
 
+import com.example.pklloginregister.user;
+
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.http.Field;
@@ -22,11 +24,11 @@ public interface BaseApiService {
 
     @FormUrlEncoded
     @POST("/api/auth/signup")
-    Call<ResponseBody> registerRequest(@Header("Content-Type") String content_type,
-                                       @Header("X-Requested-With") String requested,
-                                       @Field("name") String nama,
-                                       @Field("email") String email,
-                                       @Field("password") String password,
-                                       @Field("password_confirmation") String password2);
+    Call<user> registerRequest(@Header("Content-Type") String content_type,
+                               @Header("X-Requested-With") String requested,
+                               @Field("name") String nama,
+                               @Field("email") String email,
+                               @Field("password") String password,
+                               @Field("password_confirmation") String password2);
 }
 

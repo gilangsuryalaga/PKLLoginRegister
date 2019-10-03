@@ -36,6 +36,7 @@
                 android:text="Name"/>
             <EditText
                 android:id="@+id/editusername"
+                android:inputType="textPersonName"
                 android:layout_width="match_parent"
                 android:textColor="@color/defaulty"
                 android:layout_height="wrap_content"/>
@@ -54,6 +55,7 @@
                 android:text="Email"/>
             <EditText
                 android:id="@+id/editemail"
+                android:inputType="textEmailAddress"
                 android:layout_width="match_parent"
                 android:textColor="@color/defaulty"
                 android:layout_height="wrap_content"/>
@@ -72,6 +74,7 @@
                 android:text="Password"/>
             <EditText
                 android:id="@+id/editpassword"
+                android:inputType="textPassword"
                 android:layout_width="match_parent"
                 android:textColor="@color/defaulty"
                 android:layout_height="wrap_content"/>
@@ -91,6 +94,7 @@
                 android:text="Confirm Password"/>
             <EditText
                 android:id="@+id/editpassword2"
+                android:inputType="textPassword"
                 android:layout_width="match_parent"
                 android:textColor="@color/defaulty"
                 android:layout_height="wrap_content"/>
